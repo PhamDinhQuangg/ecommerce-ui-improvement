@@ -28,7 +28,7 @@ Giải nén toàn bộ thư mục, mở `index.html` bằng trình duyệt. Gi�
 ## 7. Hỗ trợ từ AI
 AI hỗ trợ phương án, HTML/CSS, bìa SVG mẫu và kiểm tra kỹ thuật. Sinh viên cần tự chạy, kiểm tra trên thiết bị của mình, phát hiện và sửa ít nhất một điểm, rồi cập nhật `AI_USAGE.md` đã tạo. Không ghi rằng bản thân đã sửa nếu chưa thực hiện.
 
-## Kiểm tra trên máy của bạn
+## Kiểm tra trên máy
 1. Mở trang ở máy tính và điện thoại giả lập bằng DevTools.
 2. Kiểm tra ảnh, tên dài, giá và cả 4 liên kết giới thiệu.
 3. Dùng Tab/Enter để kiểm tra bàn phím, thử zoom 200%.
