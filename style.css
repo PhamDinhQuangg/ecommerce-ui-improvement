@@ -20,6 +20,16 @@ h1,h2,h3 { line-height:1.25; }
 .brand > span:first-child { margin-right:8px; }
 .brand-dot { color:#ac663f; }
 nav { display:flex; flex-wrap:wrap; gap:30px; font-size:13px; }
+.nav-list {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 nav a { text-decoration:none; padding-block:8px; }
 .hero { display:grid; grid-template-columns:1.2fr 1fr; align-items:center; gap:40px; padding-block:56px 62px; }
 h1 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(40px,4.4vw,62px); font-weight:400; letter-spacing:-2px; margin-block:18px; }
@@ -38,21 +48,40 @@ h1 { font-family:Georgia,'Times New Roman',serif; font-size:clamp(40px,4.4vw,62p
 .section-heading .eyebrow { color:var(--muted); margin-bottom:8px; }
 h2 { font-family:Georgia,'Times New Roman',serif; font-weight:400; font-size:32px; }
 .count { color:var(--muted); font-size:12px; }
-.product-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px; }
+.product-grid { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:20px; }
 /* 4. Thẻ sản phẩm: tên không bị cắt; nút thẳng hàng */
-.product-card { min-width:0; display:flex; flex-direction:column; background:var(--white); border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+.product-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+.product-card:hover {
+  border-color: var(--green);
+}
 .cover-area { position:relative; display:grid; place-items:center; background:#f0eee7; padding:26px 32px; }
 .cover-area img { width:100%; height:230px; object-fit:contain; }
 .discount,.regular-label { position:absolute; top:12px; left:12px; padding:3px 9px; border-radius:3px; background:#fff8ec; color:#804021; font-size:11px; font-weight:700; }
 .regular-label { background:#e0e8df; color:var(--ink); }
-.product-content { flex:1; display:flex; flex-direction:column; padding:20px; }
+.product-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
 .author { font-size:11px; letter-spacing:1px; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
 .product-content h3 { font-size:17px; font-weight:600; overflow-wrap:anywhere; margin-bottom:22px; }
 .purchase { margin-top:auto; }
 .price { display:flex; align-items:baseline; flex-wrap:wrap; gap:10px; margin-bottom:16px; }
 .price strong { font-size:20px; }
 .price del { color:#70756f; font-size:12px; }
-.button { display:flex; justify-content:space-between; gap:12px; align-items:center; min-height:46px; padding:10px 14px; border:1px solid var(--green); border-radius:4px; text-decoration:none; font-size:13px; font-weight:600; }
+.button { display:flex; justify-content:space-between; gap:12px; align-items:center; min-height:46px; padding:10px 14px; border:1px solid var(--green); border-radius:4px; text-decoration:none; font-size:13px; font-weight:600;transition: background-color 0.2s ease,
+            color 0.2s ease,
+            border-color 0.2s ease; }
 .sample-note { font-size:12px; color:var(--muted); padding-block:18px; }
 /* 5. Giới thiệu sách, trạng thái tương tác và chân trang */
 .introductions { padding-block:50px 64px; }
