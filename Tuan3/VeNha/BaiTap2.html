@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bài tập 2 | Định dạng văn bản CSS</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Arial, Helvetica, sans-serif; color: #252525; background: #f6f7fa; }
+    .page { max-width: 1000px; margin: 34px auto; padding: 0 22px; }
+    h1 { font-size: clamp(24px, 4vw, 32px); margin: 0 0 24px; }
+    .exercise { margin: 17px 0; padding: 24px; background: white; border: 1px solid #e2e5ec; border-radius: 10px; }
+    .exercise h2 { margin: 0 0 18px; font-size: 18px; font-weight: 700; color: #323c4c; }
+    .ueh { color: blue; text-align: center; font-weight: bold; text-decoration: underline; font-size: 30px; }
+    .cnttd { color: rgba(255, 0, 0, .5); text-align: right; font-style: italic; border: 3px dotted #f3d900; border-radius: 12px; background: #bfbfbf; padding: 16px; font-size: 15px; }
+
+    /* 2c: dùng CSS text-shadow, không dùng hình thay thế chữ. Hình tham chiếu là chữ đỏ,
+       nổi sáng xanh-vàng và có bóng đỏ đậm hơi lệch phải/xuống dưới. */
+    .shadow-showcase { display: flex; align-items: center; justify-content: center; min-height: 150px; background: #fff; overflow: visible; }
+    .bit-shadow { display: inline-block; margin: 15px 0 25px; padding: 10px 12px 16px 6px;
+      color: #b91520; font: 700 40px/1 Arial, Helvetica, sans-serif; letter-spacing: -1.2px;
+      text-shadow:
+        -1px -1px 1px #fffdeb,
+         0    0   3px #dcff3d,
+         0    0  11px #79c900,
+         0    0  19px #83c710,
+         0    0  29px #98c924,
+         0    0  39px #dae9b8,
+         2px  2px 1px #810000,
+         5px  5px 4px #980010,
+         7px  6px 10px #700000;
+    }
+    .bit-note { font-size: 13px; color: #647080; text-align: center; margin: 0; }
+
+    /* Kích thước logo khi lặp: 30px, cố định theo viewport. */
+    .logo-background { min-height: 190px; background-image: url('assets/images/bit-logo-only.png');
+      background-size: auto 30px; background-repeat: repeat; background-attachment: fixed;
+      border: 1px solid #ccc; position: relative; }
+    .logo-background p { width: min(90%, 490px); padding: 18px; margin: 44px auto;
+      background: rgba(255,255,255,.93); text-align: center; }
+    .overflow-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px; }
+    .overflow-grid h3 { font-size: 14px; margin: 0 0 12px; }
+    .demo { border: 1px solid #7a8694; background: #fbfcfd; font-size: 13px; line-height: 1.4; }
+    .demo-hidden { width: 100px; height: 50px; overflow: hidden; }
+    .demo-ellipsis { width: 100px; height: 50px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .demo-nowrap { width: 100px; height: 50px; overflow: auto; white-space: nowrap; }
+    .bottom-link { display: inline-block; margin: 18px 0; color: #087e8c; }
+    @media (max-width: 630px) { .overflow-grid { grid-template-columns: 1fr; } .bit-shadow { font-size: 36px; } }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Bài tập 2: Định dạng văn bản bằng CSS</h1>
+    <section class="exercise">
+      <h2>2a. Đại học UEH</h2>
+      <p class="ueh">Đại học UEH</p>
+    </section>
+    <section class="exercise">
+      <h2>2b. Khoa CNTTD</h2>
+      <p class="cnttd">Khoa CNTTD</p>
+    </section>
+    <section class="exercise">
+      <h2>2c. Hiệu ứng chữ BIT-UEH bằng text-shadow</h2>
+      <div class="shadow-showcase"><span class="bit-shadow">BIT-UEH</span></div>
+      <p class="bit-note">Chữ vẫn là HTML, hiệu ứng được tạo bằng thuộc tính CSS <code>text-shadow</code>.</p>
+    </section>
+    <section class="exercise">
+      <h2>2d. Logo BIT lặp lại và cố định làm hình nền</h2>
+      <div class="logo-background"><p>Hình nền logo BIT kích cỡ 30px, lặp lại (<code>repeat</code>) và cố định (<code>fixed</code>). Hãy cuộn trang để quan sát.</p></div>
+    </section>
+    <section class="exercise">
+      <h2>2e. Overflow, text-overflow và white-space</h2>
+      <div class="overflow-grid">
+        <div><h3>i. Rộng 100px, cao 50px, overflow: hidden</h3><div class="demo demo-hidden">Nhu cầu xã hội Ngành Thương mại điện tử (TMĐT) tại Việt Nam hiện nay đang có những bước tăng trưởng mạnh mẽ và ngày càng đóng góp nhiều hơn cho sự phát triển kinh tế xã hội của đất nước. Thị trường TMĐT Việt Nam đã trở nên sôi động hơn khi có nhiều</div></div>
+        <div><h3>ii. Cắt nội dung tràn với dấu ...</h3><div class="demo demo-ellipsis">Nhu cầu xã hội Ngành Thương mại điện tử (TMĐT) tại Việt Nam hiện nay đang có những bước tăng trưởng mạnh mẽ và ngày càng đóng góp nhiều hơn cho sự phát triển kinh tế xã hội của đất nước. Thị trường TMĐT Việt Nam đã trở nên sôi động hơn khi có nhiều</div></div>
+        <div><h3>iii. white-space: nowrap</h3><div class="demo demo-nowrap">Nhu cầu xã hội Ngành Thương mại điện tử (TMĐT) tại Việt Nam hiện nay đang có những bước tăng trưởng mạnh mẽ và ngày càng đóng góp nhiều hơn cho sự phát triển kinh tế xã hội của đất nước. Thị trường TMĐT Việt Nam đã trở nên sôi động hơn khi có nhiều</div></div>
+      </div>
+    </section>
+    <a class="bottom-link" href="index.html">← Về trang tổng hợp</a>
+  </main>
+</body>
+</html>

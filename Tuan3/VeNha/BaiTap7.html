@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bài tập 7 - Bố cục CSS Grid</title><style>
+* {box-sizing:border-box} body{margin:0;padding:50px 12px 30px;background:white;font-family:Arial,sans-serif;color:#111}
+.example {width:min(100%,355px);margin:0 auto;filter:drop-shadow(-11px 10px 7px #0004)}
+.example-label {margin:0 0 3px 9px;font-size:19px}
+#wrapper {display:grid;grid-template-columns:24% 1fr;grid-template-rows:62px 240px 48px;gap:7px;
+ border:8px double #111;padding:7px;background:white}
+#wrapper > * {border:2px solid #111;padding:6px;font-size:20px;min-width:0;}
+#wrapper header {grid-column:1 / 3}
+#wrapper nav {grid-column:1}
+#wrapper main {grid-column:2}
+#wrapper footer {grid-column:1 / 3}
+.back {text-align:center;margin:35px auto;font-size:14px}
+@media(max-width:380px) { #wrapper {grid-template-columns:27% 1fr;} }
+</style></head><body>
+<div class="example"><div class="example-label">wrapper</div><div id="wrapper">
+<header>header</header><nav>nav</nav><main>main</main><footer>footer</footer>
+</div></div><p class="back"><a href="index.html">← Về trang tổng hợp</a></p></body></html>

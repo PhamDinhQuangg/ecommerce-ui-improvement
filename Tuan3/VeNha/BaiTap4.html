@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bài tập 4 - Menu ngang bằng CSS</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: white; font-family: "Times New Roman", serif; }
+    .example { max-width: 660px; margin: 80px auto 0; padding: 0 12px; }
+    ul { margin: 0; padding: 0; list-style: none; text-align: center; }
+    li { display: inline-block; width: calc(25% - 9px); margin: 0 2px; }
+    a.menu-link { display: inline-block; width: 100%; background: #00eff0; color: #0000ee;
+      font-size: 24px; text-decoration: underline; text-align: center; padding: 4px 2px; }
+    a.menu-link:hover, a.menu-link:focus-visible { background: #7cfff9; outline: 2px solid #02999c; }
+    .back { text-align: center; margin-top: 42px; font: 14px Arial, sans-serif; }
+    @media (max-width: 420px) { a.menu-link { font-size: 17px; } .example { padding: 0 7px; } li { width: calc(25% - 8px); } }
+  </style>
+</head>
+<body>
+  <nav class="example" aria-label="Danh mục môn học"><ul>
+    <li><a class="menu-link" href="#">TMDT</a></li>
+    <li><a class="menu-link" href="#">ERP</a></li>
+    <li><a class="menu-link" href="#">MIS</a></li>
+    <li><a class="menu-link" href="#">DS</a></li>
+  </ul></nav>
+  <p class="back"><a href="index.html">← Về trang tổng hợp</a></p>
+</body>
+</html>
