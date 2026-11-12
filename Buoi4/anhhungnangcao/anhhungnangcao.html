@@ -1,0 +1,193 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anh Hùng JavaScript | Diệt Rồng</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="anhhung.js" defer></script>
+</head>
+<body>
+    <main class="game">
+        <header class="header">
+            <span class="eyebrow">JAVASCRIPT RPG</span>
+            <h1>⚔️ ANH HÙNG DIỆT RỒNG</h1>
+            <p>Hành trình của Pham Dinh Quang</p>
+        </header>
+
+        <section class="setup" id="setup">
+            <label for="heroName">Tên anh hùng</label>
+            <input id="heroName" value="Pham Dinh Quang">
+
+            <label for="heroClass">Phân cấp</label>
+            <select id="heroClass">
+                <option value="a">⚔️ Chiến Binh</option>
+                <option value="b">🗡️ Sát Thủ</option>
+                <option value="c">🏹 Thợ Săn</option>
+            </select>
+
+            <button id="startBtn">BẮT ĐẦU TRẬN CHIẾN</button>
+        </section>
+
+        <section class="battlefield" id="battlefield">
+            <div class="arena-title">THE DRAGON'S LAIR</div>
+
+            <div class="fighters">
+                <article class="fighter hero" id="hero">
+                    <div class="fighter-info">
+                        <span class="type">NGƯỜI THÁCH ĐẤU</span>
+                        <h2 id="heroLabel">Pham Dinh Quang</h2>
+                        <div class="health-track">
+                            <div class="health-fill hero-health" id="heroBar"></div>
+                        </div>
+                        <div class="health-number" id="heroHP">105 / 105 HP</div>
+                    </div>
+
+                    <div class="character hero-character" id="heroCharacter">
+                        <div class="hero-aura"></div>
+                        <img src="anhhung.jpg" alt="Anh hùng Superman">
+                        <div class="character-shadow"></div>
+                    </div>
+
+                    <div class="stats" id="heroStats">
+                        STR 59 | AGI 78 | INT 28
+                    </div>
+                </article>
+
+                <div class="center-stage">
+                    <div class="versus">VS</div>
+                    <div class="round-label" id="roundLabel">
+                        SẴN SÀNG
+                    </div>
+                    <div class="projectile" id="projectile"></div>
+                    <div class="battle-message" id="battleMessage">
+                        Hãy bắt đầu cuộc chiến!
+                    </div>
+                </div>
+
+                <article class="fighter dragon" id="dragon">
+                    <div class="fighter-info">
+                        <span class="type">BOSS • RỒNG GIÀ</span>
+                        <h2>INFERNUS</h2>
+                        <div class="health-track">
+                            <div class="health-fill dragon-health" id="dragonBar"></div>
+                        </div>
+                        <div class="health-number" id="dragonHP">600 / 600 HP</div>
+                    </div>
+
+                    <div class="character dragon-character" id="dragonCharacter">
+                        <div class="dragon-aura"></div>
+                        <svg class="dragon-art" viewBox="0 0 340 350"
+                             xmlns="http://www.w3.org/2000/svg"
+                             role="img" aria-label="Rồng Già màu đỏ">
+                            <defs>
+                                <linearGradient id="bodyGradient" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0" stop-color="#ff9561"/>
+                                    <stop offset=".45" stop-color="#c93136"/>
+                                    <stop offset="1" stop-color="#661c30"/>
+                                </linearGradient>
+                                <linearGradient id="wingGradient">
+                                    <stop offset="0" stop-color="#ff9d55"/>
+                                    <stop offset="1" stop-color="#761b32"/>
+                                </linearGradient>
+                            </defs>
+
+                            <!-- Đuôi -->
+                            <path d="M205 252 Q310 266 302 320 Q276 304 268 328
+                                     Q260 293 208 294Z"
+                                  fill="#8b2431" stroke="#411629" stroke-width="5"/>
+
+                            <!-- Cánh -->
+                            <path d="M147 191 Q70 93 27 41 L51 144 L12 127
+                                     L51 231 L91 204 L108 239Z"
+                                  fill="url(#wingGradient)"
+                                  stroke="#411629" stroke-width="6"/>
+                            <path d="M196 185 Q240 60 319 35 L280 146
+                                     L329 140 L287 237 L240 215Z"
+                                  fill="url(#wingGradient)"
+                                  stroke="#411629" stroke-width="6"/>
+
+                            <!-- Thân -->
+                            <ellipse cx="175" cy="234" rx="89" ry="83"
+                                     fill="url(#bodyGradient)"
+                                     stroke="#451929" stroke-width="6"/>
+                            <ellipse cx="174" cy="245" rx="49" ry="62"
+                                     fill="#efa66e"/>
+
+                            <!-- Chân -->
+                            <path d="M112 265 L78 319 L139 319 L151 278Z"
+                                  fill="#a52a38" stroke="#451929" stroke-width="5"/>
+                            <path d="M198 279 L214 321 L272 321 L235 262Z"
+                                  fill="#a52a38" stroke="#451929" stroke-width="5"/>
+
+                            <!-- Cổ và đầu -->
+                            <path d="M138 203 Q104 155 128 101 L215 106
+                                     Q231 150 210 211Z"
+                                  fill="url(#bodyGradient)"
+                                  stroke="#451929" stroke-width="6"/>
+                            <path d="M118 100 L91 56 L139 78 L170 42
+                                     L197 79 L238 56 L220 107Z"
+                                  fill="#db593a" stroke="#451929" stroke-width="5"/>
+                            <path d="M111 103 Q163 62 220 101 L246 130
+                                     Q242 161 196 161 L140 145 Q109 141 111 103Z"
+                                  fill="url(#bodyGradient)"
+                                  stroke="#451929" stroke-width="6"/>
+
+                            <!-- Mõm -->
+                            <path d="M177 133 Q231 116 266 145
+                                     Q245 176 189 158Z"
+                                  fill="#d45b47" stroke="#451929" stroke-width="5"/>
+                            <path d="M211 160 L221 177 L230 159
+                                     M240 155 L249 170 L253 151"
+                                  fill="#fff0c5" stroke="#fff0c5" stroke-width="3"/>
+
+                            <!-- Mắt -->
+                            <path d="M174 109 Q195 93 210 111
+                                     Q193 130 174 109Z"
+                                  fill="#ffe56b"/>
+                            <ellipse cx="194" cy="111" rx="4" ry="11" fill="#23131c"/>
+                            <path d="M167 98 L215 94" stroke="#4b1622"
+                                  stroke-width="9" stroke-linecap="round"/>
+
+                            <!-- Tay và móng vuốt -->
+                            <path d="M111 210 Q65 224 75 258 L112 280
+                                     L139 258 L128 236Z"
+                                  fill="#b82b38" stroke="#451929" stroke-width="5"/>
+                            <path d="M230 209 Q278 219 266 260 L233 280
+                                     L205 257Z"
+                                  fill="#b82b38" stroke="#451929" stroke-width="5"/>
+                            <g fill="#fff0c5">
+                                <path d="M80 309 L91 330 L103 313Z"/>
+                                <path d="M111 313 L123 332 L133 313Z"/>
+                                <path d="M220 312 L233 332 L244 312Z"/>
+                                <path d="M244 310 L259 330 L270 310Z"/>
+                            </g>
+                        </svg>
+                        <div class="character-shadow"></div>
+                    </div>
+
+                    <div class="stats">STR 100 | AGI 15 | INT 80</div>
+                </article>
+            </div>
+
+            <div class="ground"></div>
+            <div class="screen-flash" id="screenFlash"></div>
+            <div class="floating-damage" id="damageText"></div>
+        </section>
+
+        <section class="controls">
+            <button id="attackBtn" disabled>⚔️ CHIẾN ĐẤU</button>
+            <button id="resetBtn">↻ CHƠI LẠI</button>
+            <button id="soundBtn">🔊 ÂM THANH: BẬT</button>
+        </section>
+
+        <section class="battle-log">
+            <h3>📜 NHẬT KÝ CHIẾN ĐẤU</h3>
+            <div id="logContent" aria-live="polite">
+                <p>Chọn phân cấp và bắt đầu cuộc phiêu lưu.</p>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
