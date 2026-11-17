@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JavaScript Labs | Phạm Đình Quang</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #f4f6fb;
+      color: #17233b;
+      font: 1rem/1.6 system-ui, sans-serif;
+    }
+    main { max-width: 880px; margin: auto; padding: 32px 20px; }
+    header, article, .summary {
+      padding: 20px;
+      background: white;
+      border: 1px solid #dce3ef;
+      border-radius: 12px;
+    }
+    h1, h2, h3 { line-height: 1.2; }
+    h1, h3 { margin-top: 0; }
+    .profile { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .profile img { width: 88px; height: 88px; object-fit: cover; border-radius: 50%; }
+    .labs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .summary { margin-top: 20px; }
+    a { color: #164db2; }
+    @media (max-width: 650px) {
+      .labs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>JavaScript Labs</h1>
+      <div class="profile">
+        <img src="avatar.jpg" alt="Ảnh đại diện của Phạm Đình Quang">
+        <div>
+          <strong>Phạm Đình Quang</strong><br>
+          MSSV: 31241024277<br>
+          Lớp học phần: Phát triển ứng dụng thương mại điện tử (chiều thứ 5)<br>
+          <a href="https://github.com/PhamDinhQuangg">GitHub cá nhân</a>
+        </div>
+      </div>
+      <p>[Viết ngắn về mục tiêu của ba Lab và vai trò của JavaScript trong phát triển web.]</p>
+    </header>
+
+    <section aria-labelledby="labs-heading">
+      <h2 id="labs-heading">Các bài thực hành</h2>
+      <div class="labs">
+        <article>
+          <h3>Lab 08 · Language Foundations</h3>
+          <p>Sử dụng biến, mảng, hàm và đối tượng để xử lý dữ liệu.</p>
+          <a href="./ch08-lab-start-master/lab08-walkthrough02.html">Mở Lab 08</a>
+        </article>
+        <article>
+          <h3>Lab 09 · DOM and Events</h3>
+          <p>Cập nhật nội dung HTML, xử lý sự kiện và kiểm tra biểu mẫu.</p>
+          <a href="./ch09-lab-start-master/lab09-walkthrough01.html">Mở Lab 09</a>
+        </article>
+        <article>
+          <h3>Lab 10 · jQuery</h3>
+          <p>Dùng jQuery để thao tác DOM, tạo hiệu ứng và xử lý yêu cầu GET.</p>
+          <a href="./ch10-lab-start-master/lab10-walkthrough01.html">Mở Lab 10</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="summary">
+      <h2>Tự đánh giá</h2>
+      <p>[Viết 100–150 từ về kỹ thuật đã học, bài hữu ích hoặc khó nhất,
+        cách áp dụng vào website thương mại điện tử và kỹ năng cần cải thiện.]</p>
+    </section>
+  </main>
+</body>
+</html>
